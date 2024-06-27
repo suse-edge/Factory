@@ -1,0 +1,15 @@
+<services>
+  <service mode="buildtime" name="kiwi_metainfo_helper"/>
+  <service mode="buildtime" name="docker_label_helper"/>
+  <service name="replace_using_package_version" mode="buildtime">
+    <param name="file">Dockerfile</param>
+    <param name="regex">%%endpoint-copier-operator_version%%</param>
+    <param name="package">endpoint-copier-operator-020</param>
+    <param name="parse-version">patch</param>
+  </service>
+  <service name="replace_using_env" mode="buildtime">
+		<param name="file">Dockerfile</param>
+		<param name="eval">IMG_REPO=$(rpm --macros=/root/.rpmmacros -E %img_repo)</param>
+		<param name="var">IMG_REPO</param>
+	</service>
+</services>
