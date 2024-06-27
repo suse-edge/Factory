@@ -1,0 +1,27 @@
+Prefer: -libqpid-proton10 -python311-urllib3_1
+
+Macros:
+%__python3 /usr/bin/python3.11
+%img_repo registry.opensuse.org/isv/suse/edge/factory/images
+%chart_repo oci://registry.opensuse.org/isv/suse/edge/factory/charts
+:Macros
+
+%if "%_repository" == "images"
+Prefer: container:sles15-image
+Type: docker
+Repotype: none
+Patterntype: none
+BuildEngine: podman
+Prefer: sles-release
+BuildFlags: dockerarg:SLE_VERSION=15.5
+%endif
+%if "%_repository" == "charts"
+Type: helm
+Repotype: helm
+Patterntype: none
+Required: perl-YAML-LibYAML
+%endif
+%if "%_repository" == "standard"
+# for build openstack-ironic-image
+BuildFlags: allowrootforbuild
+%endif
