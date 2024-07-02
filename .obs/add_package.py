@@ -12,7 +12,7 @@ BRANCH = "main"
 
 def add_package_to_workflow(name: str):
     modified = False
-    with open(".obs/workflows.yaml", "r") as wf_file:
+    with open(".obs/workflows.yml", "r") as wf_file:
         workflows = yaml.safe_load(wf_file)
     if not any(
         x
@@ -44,7 +44,7 @@ def add_package_to_workflow(name: str):
         )
         modified = True
     if modified:
-        with open(".obs/workflows.yaml", "w") as wf_file:
+        with open(".obs/workflows.yml", "w") as wf_file:
             yaml.dump(workflows, wf_file)
 
 
