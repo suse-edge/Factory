@@ -1,0 +1,31 @@
+refresh_factory:
+  filters:
+    branches:
+      only: main
+    event: push
+  steps:
+  - trigger_services:
+      package: endpoint-copier-operator
+      project: isc:SUSE:Edge:Factory
+  - trigger_services:
+      package: endpoint-copier-operator-image
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: endpoint-copier-operator-chart
+      project: isv:SUSE:Edge:Factory
+staging_build:
+  filters:
+    event: pull_request
+  steps:
+  - branch_package:
+      source_package: endpoint-copier-operator
+      source_project: isc:SUSE:Edge:Factory
+      target_project: isc:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: endpoint-copier-operator-image
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: endpoint-copier-operator-chart
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
