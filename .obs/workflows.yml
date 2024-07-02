@@ -43,6 +43,9 @@ refresh_factory:
   - trigger_services:
       package: akri-webhook-configuration-image
       project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: obs-service-set_version
+      project: isv:SUSE:Edge:Factory
 staging_build:
   filters:
     event: pull_request
@@ -97,5 +100,9 @@ staging_build:
       target_project: isv:SUSE:Edge:Factory:Staging
   - branch_package:
       source_package: akri-webhook-configuration-image
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: obs-service-set_version
       source_project: isv:SUSE:Edge:Factory
       target_project: isv:SUSE:Edge:Factory:Staging
