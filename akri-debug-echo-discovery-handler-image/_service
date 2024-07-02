@@ -1,0 +1,15 @@
+<services>
+  <service name="kiwi_metainfo_helper" mode="buildtime"/>
+  <service name="docker_label_helper" mode="buildtime"/>
+  <service name="replace_using_package_version" mode="buildtime">
+    <param name="file">Dockerfile</param>
+    <param name="regex">%PACKAGE_VERSION%</param>
+    <param name="package">akri-debug-echo-discovery-handler</param>
+    <param name="parse-version">patch</param>
+  </service>
+  <service name="replace_using_env" mode="buildtime">
+		<param name="file">Dockerfile</param>
+		<param name="eval">IMG_REPO=$(rpm --macros=/root/.rpmmacros -E %img_repo)</param>
+		<param name="var">IMG_REPO</param>
+	</service>
+</services>
