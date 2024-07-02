@@ -6,7 +6,7 @@ refresh_factory:
   steps:
   - trigger_services:
       package: endpoint-copier-operator
-      project: isc:SUSE:Edge:Factory
+      project: isv:SUSE:Edge:Factory
   - trigger_services:
       package: endpoint-copier-operator-image
       project: isv:SUSE:Edge:Factory
@@ -19,8 +19,8 @@ staging_build:
   steps:
   - branch_package:
       source_package: endpoint-copier-operator
-      source_project: isc:SUSE:Edge:Factory
-      target_project: isc:SUSE:Edge:Factory:Staging
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
   - branch_package:
       source_package: endpoint-copier-operator-image
       source_project: isv:SUSE:Edge:Factory
