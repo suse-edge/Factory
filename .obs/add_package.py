@@ -5,10 +5,7 @@ import argparse
 import os
 import os.path
 
-PROJECT = "isv:SUSE:Edge:Factory"
-REPOSITORY = "https://github.com/suse-edge/Factory"
-BRANCH = "main"
-
+from common import PROJECT, REPOSITORY, BRANCH
 
 def add_package_to_workflow(name: str):
     modified = False
