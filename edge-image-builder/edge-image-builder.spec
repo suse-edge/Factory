@@ -43,8 +43,8 @@ Requires: lvm2
 Requires: podman
 Requires: createrepo_c
 Requires: helm
-Requires: hauler-107
-Requires: nm-configurator-031
+Requires: hauler
+Requires: nm-configurator
 Requires: ca-certificates-suse
 
 %description

@@ -17,7 +17,7 @@
 
 %define project github.com/hauler-dev/hauler
 
-Name:           hauler-107
+Name:           hauler
 Version:        1.0.7
 Release:        0
 Summary:        Airgap Swiss Army Knife
@@ -26,7 +26,7 @@ URL:            https://github.com/hauler-dev/hauler
 Source:         hauler-%{version}.tar.gz
 Source1:        vendor.tar.gz
 BuildRequires:  golang-packaging
-BuildRequires:  cosign-223
+BuildRequires:  cosign
 
 %description
 

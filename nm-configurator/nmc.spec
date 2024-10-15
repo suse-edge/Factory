@@ -22,9 +22,8 @@ Release:        0
 Summary:        NM Configurator
 License:        Apache-2.0
 URL:            https://github.com/suse-edge/nm-configurator
-Source:         nm-configurator-%{version}.tar.xz
+Source:         nm-configurator-%{version}.tar
 Source1:        vendor.tar.xz
-Source2:        cargo_config
 
 BuildRequires:  cargo-packaging
 
