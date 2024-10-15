@@ -1,1 +1,4 @@
 *.tar.zst filter=lfs diff=lfs merge=lfs -text
+*.tar.gz filter=lfs diff=lfs merge=lfs -text
+*.tar.xz filter=lfs diff=lfs merge=lfs -text
+*.obscpio filter=lfs diff=lfs merge=lfs -text

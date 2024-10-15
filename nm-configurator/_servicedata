@@ -1,0 +1,4 @@
+<servicedata>
+<service name="tar_scm">
+                <param name="url">https://github.com/suse-edge/nm-configurator.git</param>
+              <param name="changesrevision">8a7b3180476cd0d5958a809c527bd8cb9b3f247b</param></service></servicedata>

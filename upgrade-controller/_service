@@ -1,0 +1,21 @@
+<services>
+  <service name="obs_scm">
+    <param name="url">https://github.com/suse-edge/upgrade-controller.git</param>
+    <param name="versionformat">@PARENT_TAG@</param>
+    <param name="scm">git</param>
+    <param name="exclude">.git</param>
+    <param name="revision">v0.1.0</param>
+    <param name="versionrewrite-pattern">v(\d+).(\d+).(\d+)</param>
+    <param name="versionrewrite-replacement">\1.\2.\3</param>
+    <param name="changesgenerate">enable</param>
+  </service>
+  <service mode="buildtime" name="tar" />
+  <service mode="buildtime" name="recompress">
+    <param name="file">*.tar</param>
+    <param name="compression">gz</param>
+  </service>
+  <service name="go_modules">
+     <param name="compression">gz</param>
+  </service>
+  <service mode="buildtime" name="set_version" />
+</services>
