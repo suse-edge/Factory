@@ -8,7 +8,7 @@ FROM registry.suse.com/bci/bci-micro:$SLE_VERSION AS micro
 
 FROM registry.suse.com/bci/bci-base:$SLE_VERSION AS base
 COPY --from=micro / /installroot/
-RUN zypper --installroot /installroot --non-interactive install --no-recommends endpoint-copier-operator-020; zypper -n clean; rm -rf /var/log/*
+RUN zypper --installroot /installroot --non-interactive install --no-recommends endpoint-copier-operator; zypper -n clean; rm -rf /var/log/*
 
 FROM micro AS final
 # Define labels according to https://en.opensuse.org/Building_derived_containers

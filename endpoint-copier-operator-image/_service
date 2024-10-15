@@ -4,7 +4,7 @@
   <service name="replace_using_package_version" mode="buildtime">
     <param name="file">Dockerfile</param>
     <param name="regex">%%endpoint-copier-operator_version%%</param>
-    <param name="package">endpoint-copier-operator-020</param>
+    <param name="package">endpoint-copier-operator</param>
     <param name="parse-version">patch</param>
   </service>
   <service name="replace_using_env" mode="buildtime">

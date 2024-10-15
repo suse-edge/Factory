@@ -16,7 +16,7 @@
 #
 
 
-Name:           endpoint-copier-operator-020
+Name:           endpoint-copier-operator
 Version:        0.2.0
 Release:        0.2.0
 Summary:        Implements a Kubernetes API for copying endpoint resources

@@ -31,7 +31,6 @@ BuildRequires:  cargo-packaging
 
 %prep
 %autosetup -p1 -a1 -n nm-configurator-%{version}
-install -D -m 644 %{SOURCE2} .cargo/config
 
 %build
 %{cargo_build}
