@@ -46,6 +46,51 @@ refresh_factory:
   - trigger_services:
       package: obs-service-set_version
       project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: cosign
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: frr-k8s
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: cluster-api
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: cluster-api-operator
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: kubectl
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: upgrade-controller
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: cluster-api-provider-rke2
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: nm-configurator
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: kube-rbac-proxy
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: edge-image-builder
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: metallb
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: hauler
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: ip-address-manager
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: baremetal-operator
+      project: isv:SUSE:Edge:Factory
+  - trigger_services:
+      package: cluster-api-provider-metal3
+      project: isv:SUSE:Edge:Factory
 staging_build:
   filters:
     event: pull_request
@@ -104,5 +149,65 @@ staging_build:
       target_project: isv:SUSE:Edge:Factory:Staging
   - branch_package:
       source_package: obs-service-set_version
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: cosign
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: frr-k8s
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: cluster-api
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: cluster-api-operator
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: kubectl
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: upgrade-controller
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: cluster-api-provider-rke2
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: nm-configurator
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: kube-rbac-proxy
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: edge-image-builder
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: metallb
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: hauler
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: ip-address-manager
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: baremetal-operator
+      source_project: isv:SUSE:Edge:Factory
+      target_project: isv:SUSE:Edge:Factory:Staging
+  - branch_package:
+      source_package: cluster-api-provider-metal3
       source_project: isv:SUSE:Edge:Factory
       target_project: isv:SUSE:Edge:Factory:Staging
