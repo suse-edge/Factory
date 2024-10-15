@@ -32,19 +32,22 @@ def delete_package_from_project(name: str):
     p.check_returncode()
 
 
-def main():
-    parser = argparse.ArgumentParser(prog="delete_package")
-    parser.add_argument("package")
-
-    args = parser.parse_args()
-
-    package_name = args.package
+def delete_package(package_name: str):
     if "/" in package_name:
         print("invalid package name")
         os.exit(1)
 
     delete_package_from_project(package_name)
     delete_package_from_workflow(package_name)
+
+
+def main():
+    parser = argparse.ArgumentParser(prog="delete_package")
+    parser.add_argument("package")
+
+    args = parser.parse_args()
+
+    delete_package(args.package)
 
     print("Package deleted in OBS, you can now push the modified workflow file")
 

@@ -57,13 +57,7 @@ def add_package_to_project(name: str):
     p.check_returncode()
 
 
-def main():
-    parser = argparse.ArgumentParser(prog="add_package")
-    parser.add_argument("package")
-
-    args = parser.parse_args()
-
-    package_name = args.package
+def add_package(package_name: str):
     if "/" in package_name:
         print("invalid package name")
         os.exit(1)
@@ -74,6 +68,16 @@ def main():
 
     add_package_to_project(package_name)
     add_package_to_workflow(package_name)
+
+
+def main():
+    parser = argparse.ArgumentParser(prog="add_package")
+    parser.add_argument("package")
+
+    args = parser.parse_args()
+
+    add_package(args.package)
+    
 
     print("Package created in OBS, you can now push the modified workflow file")
 
