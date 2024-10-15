@@ -1,0 +1,3 @@
+[submodule "obs-service-set_version"]
+	path = obs-service-set_version
+	url = https://src.opensuse.org/SLFO-pool/obs-service-set_version.git
